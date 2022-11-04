@@ -1,0 +1,11 @@
+// typography
+
+@mixin font-heading {
+  font-family: $font-heading;
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+
+@mixin font-body {
+  font-weight: $regular;
+}

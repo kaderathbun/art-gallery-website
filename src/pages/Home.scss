@@ -1,2 +1,126 @@
 @import '/scss/variables';
 @import '/scss/mixins';
+
+.img {
+  margin: 0 auto;
+  padding: 6.677px 15px;
+  width: 100%;
+}
+
+.hero {
+  margin-bottom: 100px;
+
+  &__img {
+    background: url(../../public/assets/mobile/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 240px;
+  }
+  &__title {
+    @include font-heading;
+    font-size: 6rem;
+    line-height: 55px;
+    padding: 25px 15px;
+    width: 83%;
+  }
+  &__desc {
+    font-weight: $regular;
+    font-size: 1.8rem;
+    line-height: 28px;
+    padding-inline: 15px;
+  }
+  &__cta {
+    font-family: $font-heading;
+    font-size: 2rem;
+    letter-spacing: 3.64px;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $black;
+    border: none;
+    padding: 20px 25px;
+    text-align: center;
+    width: 204px;
+    height: 72px;
+    margin: 25px 15px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      content: url('../../public/assets/icon-arrow-right.svg');
+      width: 58px;
+      height: 72px;
+      background-color: $gold;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.main {
+  margin: 0 auto 100px;
+
+  &__title-grid1 {
+    @include font-heading;
+    font-size: 5rem;
+    line-height: 45px;
+    padding: 15px 15px 0;
+  }
+  &__desc-grid1 {
+    width: 99%;
+    @include font-body;
+    font-size: 1.8rem;
+    line-height: 28px;
+    padding: 15px;
+  }
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: $black;
+    color: $white;
+    margin: 6.677px 15px;
+    padding: 45px 20px;
+  }
+  &__title-grid2 {
+    @include font-heading;
+    font-size: 5rem;
+    line-height: 45px;
+  }
+  &__desc-grid2 {
+    @include font-body;
+    font-size: 1.8rem;
+    line-height: 28px;
+  }
+}
+
+.footer {
+  background-color: black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 45px 20px;
+
+  &__logo {
+    width: 110px;
+    height: 40px;
+  }
+  &__desc {
+    @include font-body;
+    font-size: 1.6rem;
+    line-height: 26px;
+  }
+  &__media-container {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+}
