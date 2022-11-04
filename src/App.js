@@ -3,14 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss'
 // Components
 import Home from './pages/Home'
-import Location from './pages/Location' 
+import Location from './pages/Location'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home dogs={dogs} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/location" element={<Location />} />
         </Routes>
       </BrowserRouter>

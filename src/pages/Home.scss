@@ -45,6 +45,12 @@
     height: 72px;
     margin: 25px 15px;
     position: relative;
+    transition: all 0.25s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gold;
+    }
 
     &::before {
       position: absolute;
@@ -101,26 +107,95 @@
   }
 }
 
-.footer {
-  background-color: black;
-  color: $white;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 45px 20px;
+@media screen and (min-width: 768px) {
+  .img {
+    margin: initial;
+    padding: initial;
+  }
 
-  &__logo {
-    width: 110px;
-    height: 40px;
+  .hero {
+    position: relative;
+
+    &__img {
+      background: url(../../public/assets/tablet/image-hero.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+      width: 437px;
+      height: 700px;
+    }
+    &__content-container {
+      position: absolute;
+      top: 100px;
+      right: 0px;
+      bottom: 0;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    &__title {
+      font-size: 7rem;
+      line-height: 65px;
+      width: 94%;
+      padding-inline: initial;
+    }
+    &__desc {
+      font-size: 1.8rem;
+      line-height: 28px;
+      padding-inline: initial;
+      width: 89%;
+    }
+    &__cta {
+      margin-inline: initial;
+    }
   }
-  &__desc {
-    @include font-body;
-    font-size: 1.6rem;
-    line-height: 26px;
-  }
-  &__media-container {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+
+  .main {
+    margin-inline: 42.25px;
+
+    &__container-grid1 {
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      place-items: center;
+      margin-bottom: 10px;
+    }
+    &__img-grid1 {
+      content: url('../../public/assets/tablet/image-grid-1.jpg');
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+    &__title-grid1 {
+      padding: 0;
+      width: 68%;
+      justify-self: start;
+    }
+    &__desc-grid1 {
+      width: 80%;
+      padding: 0;
+      justify-self: start;
+      align-self: start;
+    }
+    &__container-grid2 {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      grid-template-rows: 0.75fr 1fr;
+      gap: 10px;
+    }
+    &__img-grid2 {
+      content: url('../../public/assets/tablet/image-grid-2.jpg');
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+    &__img-grid3 {
+      content: url('../../public/assets/tablet/image-grid-3.jpg');
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+    &__content-wrapper {
+      margin: initial;
+      padding: 45px 35px;
+    }
   }
 }
