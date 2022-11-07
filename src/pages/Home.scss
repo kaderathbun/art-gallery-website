@@ -127,7 +127,7 @@
     &__content-container {
       position: absolute;
       top: 100px;
-      right: 0px;
+      right: 0;
       bottom: 0;
       width: 50%;
       display: flex;
@@ -196,6 +196,49 @@
     &__content-wrapper {
       margin: initial;
       padding: 45px 35px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: $black;
+      width: 450px;
+      height: 799px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &__img {
+      background: url(../../public/assets/desktop/image-hero.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+      width: 540px;
+      height: 800px;
+      margin-left: 450px;
+    }
+    &__content-container {
+      width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: min-content min-content;
+      color: $white;
+      mix-blend-mode: difference;
+    }
+    &__title {
+      width: 100%;
+      font-size: 96px;
+      line-height: 88px;
+    }
+    &__cta {
+      grid-column: 2/3;
+      grid-row: 2/3;
     }
   }
 }

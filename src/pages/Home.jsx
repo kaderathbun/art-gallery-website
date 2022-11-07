@@ -12,7 +12,9 @@ function Home() {
       <header className="hero">
         <div className="hero__img"></div>
         <div className="hero__content-container">
-          <h1 className="hero__title">Modern <br /> Art Gallery</h1>
+          <h1 className="hero__title">
+            Modern <br /> Art Gallery
+          </h1>
           <p className="hero__desc">
             The arts in the collection of the Modern Art Gallery all started
             from a spark of inspiration. Will these pieces inspire you? Visit us
