@@ -48,7 +48,7 @@
       content: '';
       content: url('../../public/assets/icon-arrow-right.svg');
       width: 58px;
-      height: 72px;
+      height: 100%;
       background-color: $gold;
       top: 0;
       right: 0;
@@ -204,6 +204,8 @@
   .hero {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    max-width: 1440px;
+    margin-inline: auto;
 
     &::before {
       position: absolute;
@@ -240,7 +242,7 @@
       font-size: 2.2rem;
       line-height: 32px;
       grid-row: 2/3;
-      width: 155%;
+      width: 160%;
       align-self: start;
     }
     &__cta {
@@ -252,7 +254,6 @@
   .main {
     margin-inline: 126.75px;
     max-width: 1440px;
-    margin: 42.25px auto 100px;
 
     &__container-grid1 {
       margin-bottom: 20px;
@@ -284,7 +285,7 @@
       line-height: 60px;
     }
     &__content-wrapper {
-      padding: 45px;
+      padding: 60px 80px;
     }
     &__desc-grid2 {
       font-size: 2.2rem;
@@ -299,4 +300,8 @@
       max-width: initial;
     }
   }
+
+.main {
+  margin-inline: auto;
+}
 }

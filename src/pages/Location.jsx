@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // styles
 import './Location.scss'
@@ -38,7 +39,9 @@ function Location() {
           </Popup>
         </Marker>
       </MapContainer>
-      <button className="location__cta">Back to Home</button>
+      <Link to="/" className="location__cta">
+        Back to Home
+      </Link>
       <article className="address">
         <h1 className="address__title">Our Location</h1>
         <p className="address__street">
