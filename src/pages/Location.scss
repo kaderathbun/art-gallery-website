@@ -1,2 +1,142 @@
 @import '/scss/variables';
 @import '/scss/mixins';
+
+// leaflet
+.leaflet-container {
+  width: 100vw;
+  height: 600px;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 520px;
+}
+
+// Location.scss styles
+.location {
+  &__map {
+    position: relative;
+  }
+  &__cta {
+    @include cta;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    margin: 0;
+    margin-left: 58px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gold;
+    }
+
+    &:hover::before {
+      background-color: $black;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      content: url('../../public/assets/icon-arrow-left.svg');
+      width: 58px;
+      height: 72px;
+      background-color: $gold;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+.address {
+  background-color: $black;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title {
+    color: $white;
+    font-family: $font-heading;
+    font-size: 5rem;
+    line-height: 45px;
+    text-transform: uppercase;
+  }
+  &__street {
+    color: $white;
+    font-size: 1.8rem;
+    line-height: 28px;
+    &--bold {
+      display: inline-block;
+      color: $gold;
+      font-family: $font-heading;
+      font-size: 3.2rem;
+      line-height: 32px;
+      text-transform: uppercase;
+      padding-block: 20px;
+    }
+  }
+  &__desc {
+    color: $white;
+    font-size: 1.8rem;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .location {
+    &__cta {
+      left: 42.25px;
+    }
+  }
+  .address {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 70px;
+    padding: 75px 42.25px;
+    align-items: start;
+
+    &__title {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      font-size: 5.5rem;
+      line-height: 50px;
+    }
+    &__street {
+      &--bold {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .location {
+    &__cta {
+      left: 126.75px;
+    }
+  }
+  .address {
+    padding: 75px 126.75px;
+    column-gap: 200px;
+    row-gap: 20px;
+
+    &__title {
+      font-size: 7rem;
+      line-height: 70px;
+    }
+    &__street {
+      font-size: 2.2rem;
+      line-height: 32px;
+      &--bold {
+        font-size: 3.6rem;
+        line-height: 36px;
+      }
+    }
+  }
+}

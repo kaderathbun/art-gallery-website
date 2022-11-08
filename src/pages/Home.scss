@@ -14,7 +14,7 @@
     background: url(../../public/assets/mobile/image-hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: auto;
     width: 100%;
     height: 240px;
   }
@@ -32,24 +32,15 @@
     padding-inline: 15px;
   }
   &__cta {
-    font-family: $font-heading;
-    font-size: 2rem;
-    letter-spacing: 3.64px;
-    text-transform: uppercase;
-    color: $white;
-    background-color: $black;
-    border: none;
-    padding: 20px 25px;
-    text-align: center;
-    width: 204px;
-    height: 72px;
-    margin: 25px 15px;
-    position: relative;
-    transition: all 0.25s ease;
+    @include cta;
 
     &:hover {
       cursor: pointer;
       background-color: $gold;
+    }
+
+    &:hover::before {
+      background-color: $black;
     }
 
     &::before {
@@ -66,6 +57,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all 0.5s ease;
     }
   }
 }
@@ -115,8 +107,13 @@
 
   .hero {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content min-content;
 
     &__img {
+      grid-column: 1/2;
+      grid-row: 1/4;
       background: url(../../public/assets/tablet/image-hero.jpg);
       background-repeat: no-repeat;
       background-position: center;
@@ -124,30 +121,33 @@
       width: 437px;
       height: 700px;
     }
-    &__content-container {
-      position: absolute;
-      top: 100px;
-      right: 0;
-      bottom: 0;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
     &__title {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      align-self: end;
       font-size: 7rem;
       line-height: 65px;
-      width: 94%;
-      padding-inline: initial;
+      width: 100%;
+      margin-left: -50px;
+      padding: initial;
     }
     &__desc {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      align-self: center;
       font-size: 1.8rem;
       line-height: 28px;
+      width: 103%;
+      margin-left: -50px;
       padding-inline: initial;
-      width: 89%;
+      max-width: 525px;
     }
     &__cta {
-      margin-inline: initial;
+      grid-column: 2/3;
+      grid-row: 3/4;
+      align-self: start;
+      margin-left: -50px;
+      margin-block: 0;
     }
   }
 
@@ -202,6 +202,9 @@
 
 @media only screen and (min-width: 1440px) {
   .hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
     &::before {
       position: absolute;
       content: '';
@@ -221,24 +224,79 @@
       height: 800px;
       margin-left: 450px;
     }
-    &__content-container {
-      width: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: min-content min-content;
-      color: $white;
-      mix-blend-mode: difference;
-    }
     &__title {
-      width: 100%;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      width: 45%;
       font-size: 96px;
       line-height: 88px;
+      color: $white;
+      mix-blend-mode: difference;
+      justify-self: center;
+      align-self: center;
+      margin-left: -125px;
+    }
+    &__desc {
+      font-size: 2.2rem;
+      line-height: 32px;
+      grid-row: 2/3;
+      width: 155%;
+      align-self: start;
     }
     &__cta {
       grid-column: 2/3;
-      grid-row: 2/3;
+      grid-row: 3/4;
+    }
+  }
+
+  .main {
+    margin-inline: 126.75px;
+    max-width: 1440px;
+    margin: 42.25px auto 100px;
+
+    &__container-grid1 {
+      margin-bottom: 20px;
+    }
+    &__img-grid1 {
+      content: url(../../public/assets/desktop/image-grid-1.jpg);
+    }
+    &__title-grid1 {
+      font-size: 6rem;
+      line-height: 60px;
+      width: 55%;
+    }
+    &__desc-grid1 {
+      font-size: 2.2rem;
+      line-height: 32px;
+      width: 65%;
+    }
+    &__container-grid2 {
+      gap: 20px;
+    }
+    &__img-grid2 {
+      content: url(../../public/assets/desktop/image-grid-2.jpg);
+    }
+    &__img-grid3 {
+      content: url(../../public/assets/desktop/image-grid-3.jpg);
+    }
+    &__title-grid2 {
+      font-size: 6rem;
+      line-height: 60px;
+    }
+    &__content-wrapper {
+      padding: 45px;
+    }
+    &__desc-grid2 {
+      font-size: 2.2rem;
+      line-height: 32px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .hero {
+    &__desc {
+      max-width: initial;
     }
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 
 // styles
 import './Home.scss'
@@ -7,21 +8,25 @@ import './Home.scss'
 import Footer from '../components/Footer'
 
 function Home() {
+  const [themeSecondary, setThemeSecondary] = useState(null)
+
+  useEffect(() => {
+    setThemeSecondary(false)  
+  }, [themeSecondary])
+
   return (
     <div>
       <header className="hero">
         <div className="hero__img"></div>
-        <div className="hero__content-container">
-          <h1 className="hero__title">
-            Modern <br /> Art Gallery
-          </h1>
-          <p className="hero__desc">
-            The arts in the collection of the Modern Art Gallery all started
-            from a spark of inspiration. Will these pieces inspire you? Visit us
-            and find out.
-          </p>
-          <button className="hero__cta">Our Location</button>
-        </div>
+        <h1 className="hero__title">
+          Modern <br /> Art Gallery
+        </h1>
+        <p className="hero__desc">
+          The arts in the collection of the Modern Art Gallery all started from
+          a spark of inspiration. Will these pieces inspire you? Visit us and
+          find out.
+        </p>
+        <button className="hero__cta">Our Location</button>
       </header>
       <main className="main">
         <article className="main__container-grid1">
@@ -56,7 +61,7 @@ function Home() {
           </article>
         </section>
       </main>
-      <Footer />
+      <Footer theme={themeSecondary} />
     </div>
   )
 }

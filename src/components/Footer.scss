@@ -2,7 +2,7 @@
 @import '/scss/mixins';
 
 .footer {
-  background-color: black;
+  background-color: $black;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,23 @@
 
     &__desc {
       width: 36%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    padding-inline: 100px;
+    padding-top: 70px;
+
+    &__logo {
+      width: 160px;
+      height: 58px; 
+    }
+    &__desc {
+      font-size: 1.8rem;
+      line-height: 28px;
+      width: 32%;
     }
   }
 }
