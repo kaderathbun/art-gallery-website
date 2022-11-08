@@ -21,19 +21,14 @@ function Home() {
       <motion.header
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, }}
         className="hero"
       >
         <div className="hero__img"></div>
         <motion.h1
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 260,
-            damping: 20,
-            delay: 1.5,
-          }}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, }}
           className="hero__title"
         >
           Modern <br /> Art Gallery
@@ -41,7 +36,7 @@ function Home() {
         <motion.p
           initial={{ opacity: 0, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, delay: 2 }}
+          transition={{ duration: 1 }}
           className="hero__desc"
         >
           The arts in the collection of the Modern Art Gallery all started from
